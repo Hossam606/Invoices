@@ -17,12 +17,13 @@
 
         <div class="col-12">
             <button type="submit" class="btn btn-primary">Search</button>
-            <a href="/Home/Index" class="btn btn-dark">Reset</a>
+            <a href="/User/Index" class="btn btn-dark">Reset</a>
         </div>
     </form>
 
+
     <div class="col-md-8 offset-md-2">
-        <table class="table">
+        <table class="table" id="table">
             <thead>
                 <tr  >                    
                     <th>UserName</th>
@@ -61,4 +62,15 @@
         <i class="bi bi-plus-circle"></i> Add New
     </a>
 </div>
-
+<input type="submit" id="btnExport" value="Export" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="~/js/table2excel.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#btnExport").click(function () {
+            $("#table").table2excel({
+                filename: "Table.xls"
+            });
+        });
+    });
+</script>

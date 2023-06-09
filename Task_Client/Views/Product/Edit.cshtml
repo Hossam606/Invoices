@@ -1,0 +1,62 @@
+﻿@model Task_Entities.Entities.Product
+@{
+    ViewData["Title"] = "Update Product";
+}
+
+<div class="row text">
+    <div class="col-md-8 offset-2">
+        <p>
+            <h1> Update @Model.Title </h1>
+        </p>
+        <div class="row">
+            <div class=" col-md-8 offset-2">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group text-center">
+                        <img class="rounded-circle border-info" style="max-width:150px; max-height:250px" id="ProfilPicturePreview" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Title" class="control-label"></label>
+                        <input asp-for="Title" class="form-control" />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Price" class="control-label"></label>
+                        <input asp-for="Price" class="form-control" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ImageUrl" class="control-label"></label>
+                        <input asp-for="ImageUrl" class="form-control" />
+                        <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="padding-top:10px;">
+                        <input type="submit" value="Update" class="btn btn-outline-success float-right" />
+                        <a class="btn btn-outline-secondary" asp-action="Index">Show All</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+
+        console.log("dddd");
+
+        $(document).ready(function () {
+            var output = document.getElementById('ProfilPicturePreview');
+            output.src = $("#ImageUrl").val();
+        })
+
+
+        $("#PictureUrl").on("change", function () {
+            var output = document.getElementById('ProfilPicturePreview');
+            output.src = $(this).val();
+        })
+
+    </script>
+    }

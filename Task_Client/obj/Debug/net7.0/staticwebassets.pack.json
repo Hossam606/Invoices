@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Task_Client.bundle.scp.css"
     },
     {
+      "Id": "E:\\Visual Studio 22\\Task_Client\\Task_Client\\wwwroot\\Scripts\\table2excel.js",
+      "PackagePath": "staticwebassets\\Scripts\\table2excel.js"
+    },
+    {
       "Id": "E:\\Visual Studio 22\\Task_Client\\Task_Client\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

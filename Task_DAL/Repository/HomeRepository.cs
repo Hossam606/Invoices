@@ -11,14 +11,25 @@ using Task_Entities.InterFaces;
 
 namespace Task_DAL.Repository
 {
-    public class HomeRepository:IHomeRepository
+    public class HomeRepository<T>:IHomeRepository<T> where T : class
     {
         private readonly DbTaskContext _db;
         public HomeRepository(DbTaskContext db)
         {
                 _db= db;
         }
-        public async Task<IEnumerable<User>> GetBooks(string sTerm = "")
+        public  IEnumerable<T> GetAll()
+        {
+            var result = _db.Set<T>().ToList();
+            return result;
+        }
+        public async Task Add(T entity)
+        {
+            await _db.Set<T>().AddAsync(entity);
+            await _db.SaveChangesAsync();
+
+        }
+        public async Task<IEnumerable<T>> GetUsers(string sTerm = "")
         {
             sTerm = sTerm.ToLower();
 
@@ -41,10 +52,31 @@ namespace Task_DAL.Repository
              
              
 
-            return users;
+            return (IEnumerable<T>)users;
 
         }
+        public async Task<T> GetById(int id)
+        {
+            var result = await _db.Set<T>().FindAsync(id);
+            return result;
+        }
+        public async Task Delete(int id)
+        {
 
-         
+            var result = await _db.Set<T>().FindAsync(id);
+            _db.Set<T>().Remove(result);
+            await _db.SaveChangesAsync();
+        }
+        public async Task UpdateAsync(int id, T entity)
+        {
+            //EntityEntry entityEntry = _context.Entry<T>(entity);
+            //entityEntry.State = EntityState.Modified;
+            //var x= entity;
+            _db.Update(entity);
+            await _db.SaveChangesAsync();
+            //return entity;
+        }
+
+
     }
 }

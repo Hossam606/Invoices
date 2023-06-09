@@ -20,6 +20,9 @@ public partial class Product
 
     public int? InvoiceId { get; set; }
 
+    [StringLength(200)]
+    public string? ImageUrl { get; set; }
+
     [ForeignKey("InvoiceId")]
     [InverseProperty("Products")]
     public virtual Invoice? Invoice { get; set; }

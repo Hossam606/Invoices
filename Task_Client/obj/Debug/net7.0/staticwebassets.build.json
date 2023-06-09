@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "IiO9eu9kcn69L5hYR3vXCoSmqWbrG8tOIk8N4BLi/v8=",
+  "Hash": "t1INQPArpEwWiANJqCq0qSro7m3reo8ivx+ns6YZfIc=",
   "Source": "Task_Client",
   "BasePath": "_content/Task_Client",
   "Mode": "Default",
@@ -1069,6 +1069,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "E:\\Visual Studio 22\\Task_Client\\Task_Client\\wwwroot\\Scripts\\table2excel.js",
+      "SourceId": "Task_Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Visual Studio 22\\Task_Client\\Task_Client\\wwwroot\\",
+      "BasePath": "_content/Task_Client",
+      "RelativePath": "Scripts/table2excel.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Scripts\\table2excel.js"
     }
   ]
 }

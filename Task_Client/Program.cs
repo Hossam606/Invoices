@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Task_DAL.Data;
@@ -20,9 +21,12 @@ namespace Task_Client
             var conn = builder.Configuration.GetConnectionString("DefaultConnection");
             builder.Services.AddDbContext<DbTaskContext>(options =>
                options.UseSqlServer(conn));
-            builder.Services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
-            builder.Services.AddTransient(typeof(IHomeRepository), typeof(HomeRepository));
-            //builder.Services.AddScoped(typeof(IHomeRepository), typeof(HomeRepository));
+             builder.Services.AddTransient(typeof(IHomeRepository<> ), typeof(HomeRepository<>));
+         //   builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+         //.AddJwtBearer(options =>
+         //{
+         //    // Configure options here
+         //});
             var app = builder.Build();
 
 

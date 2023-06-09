@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Reflection.Metadata;
 using Task_Client.Models;
 using Task_DAL.Data;
 using Task_Entities.Entities;
@@ -8,27 +9,16 @@ namespace Task_Client.Controllers
 {
     public class UserController : Controller
     {
-        private readonly IRepository<User> _user;
-        private readonly DbTaskContext _db;
-        private readonly IHomeRepository _context;
-        public UserController(IRepository<User> user, DbTaskContext db, IHomeRepository context)
+         
+        private readonly IHomeRepository<User> _context;
+        public UserController(IHomeRepository<User> context)
         {
-            _user = user;
-            _db = db;
             _context = context;
         }
-        //[HttpGet]
-        //public async Task<IActionResult> Index()
-        //{
-        //    //var all = _usercontext.GetAll();
-        //    //return View(all);
-        //    return View(_db.Users.ToList());
-        //}
-
-        //[HttpPost]
+        
         public async Task<IActionResult> Index(string sterm = "")
         {
-            var users = await _context.GetBooks(sterm);
+            var users = await _context.GetUsers(sterm);
             UserDisplayModel userModel = new UserDisplayModel
             {
                 Users = users,
@@ -48,8 +38,9 @@ namespace Task_Client.Controllers
         {
             if (ModelState.IsValid)
             {
-                await _db.Users.AddAsync(adduser);
-                _db.SaveChanges();
+                //await _db.Users.AddAsync(adduser);
+                //_db.SaveChanges();
+                await _context.Add(adduser);
                 return RedirectToAction(nameof(Index));
                  
             }   
@@ -58,17 +49,18 @@ namespace Task_Client.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
-            var user = await _db.Users.FindAsync(id);
-            if (user == null) return View("NotFound");
-            return View(user);
+            //var user = await _db.Users.FindAsync(id);
+            //if (user == null) return View("NotFound");
+            //return View(user);
+            var x =await _context.GetById(id);
+            return View(x);
         }
         [HttpPost]
         public async Task<IActionResult> Edit(int id,User user)
         {
             if (ModelState.IsValid)
             {
-                _db.Users.Update(user);
-                await _db.SaveChangesAsync();
+                await _context.UpdateAsync(id, user);
                 return RedirectToAction(nameof(Index));
             }
             return View(user);
@@ -76,22 +68,46 @@ namespace Task_Client.Controllers
         [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {
-            var user = await _db.Users.FindAsync(id);
+            var user = await _context.GetById(id);
             if (user == null) return View("NotFound");
             return View(user);
         }
         [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirm(int id)
         {
-            var user = await _db.Users.FindAsync(id);
+            var user = await _context.GetById(id);
             if (user == null) return View("NotFound");
-            await _db.Users.FindAsync(id);
-            _db.Users.Remove(user);
-            await _db.SaveChangesAsync();
+            await _context.Delete(id);    
             return RedirectToAction(nameof(Index));
 
         }
 
+        //public ActionResult ExportToPDF()
+        //{
+        //    // Retrieve the contents of the grid
+        //    var gridContents = GetGridContents();
+        //    // Export the grid contents to a PDF file
+        //    ExportToPDF(gridContents); // or ExportToExcel(gridContents);
+        //                               // Provide feedback to the user
+        //    TempData["Message"] = "File exported successfully.";
+        //    return RedirectToAction("Index");
+        //}
+        //public void ExportToPDF(List<List<string>> gridContents)
+        //{
+        //    var document = new Document();
+        //    PdfWriter.GetInstance(document, new FileStream("grid.pdf", FileMode.Create));
+        //    document.Open();
+        //    var table = new PdfPTable(gridContents[0].Count);
+        //    foreach (var row in gridContents)
+        //    {
+        //        foreach (var cell in row)
+        //        {
+        //            table.AddCell(cell);
+        //        }
+        //    }
+        //    document.Add(table);
+        //    document.Close();
+        //}
 
     }
 }
