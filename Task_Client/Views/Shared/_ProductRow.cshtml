@@ -1,4 +1,28 @@
-﻿@model Task_Entities.Entities.Product
+﻿@*@model List<Task_Entities.Entities.Product>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.TitleOfProduct</td>
+                <td>@product.Quentity</td>
+                <td>@product.Price</td>
+            </tr>
+        }
+    </tbody>
+</table>
+*@
+
+
+@model Task_Entities.Entities.Product
  
 <tr style="margin-bottom:20px">
     <td style="padding: 10px">
@@ -25,3 +49,31 @@
         </div>
     </td>
  </tr>
+
+
+@*@model Task_Client.ViewModel.InvoiceViewModel
+
+<div class="form-group">
+    <label>Title of Invoice</label>
+    <input type="text" asp-for="TitleOfInvoice" class="form-control"/>
+</div>
+
+<table class="table" id="product-table">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Products.Count; i++)
+        {
+            <tr>
+                <td><input type="text" asp-for="Products[i].TitleOfProduct" class="form-control" /></td>
+                <td><input type="number" asp-for="Products[i].Quentity" class="form-control" /></td>
+                <td><input type="number" asp-for="Products[i].Price" class="form-control" /></td>
+            </tr>
+        }
+    </tbody>
+</table>*@

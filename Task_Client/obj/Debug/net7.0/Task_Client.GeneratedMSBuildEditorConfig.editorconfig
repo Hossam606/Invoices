@@ -60,8 +60,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Visual Studio 22/Invoices/Task_Client/Views/Shared/InvoiceRow.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEludm9pY2VSb3cuY3NodG1s
+[E:/Visual Studio 22/Invoices/Task_Client/Views/Shared/Invoice.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEludm9pY2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/Visual Studio 22/Invoices/Task_Client/Views/Shared/_LoginPartial.cshtml]

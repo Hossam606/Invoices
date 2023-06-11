@@ -11,33 +11,17 @@ namespace Task_Client.Controllers
 {
     public class InvoiceController : Controller
     {
-        private readonly IHomeRepository<Invoice> _context;
-
+        private readonly IHomeRepository<Invoice> _Invoicecontext;
+        private readonly IHomeRepository<Product> _Productcontext;
         private readonly DbTaskContext _db;
-        public InvoiceController(IHomeRepository<Invoice> context,DbTaskContext db)
+        public InvoiceController(IHomeRepository<Invoice> context,DbTaskContext db, IHomeRepository<Product> Productcontext)
         {
-            _context= context;
+            _Invoicecontext= context;
             _db= db;
+            _Productcontext= Productcontext;
         }
         public async Task<IActionResult> Index()
         {
-
-
-            //IEnumerable<InvoiceViewModel> query = await (from invoice in _db.Invoices
-            //                                             join product in _db.Products on invoice.Id equals product.InvoiceId into products
-            //                                             select new InvoiceViewModel
-            //                                             {
-            //                                                 Title = invoice.TitleOfInvoice,
-            //                                                 Date = invoice.Date,
-            //                                                 Products = products.Select(p => new Product
-            //                                                 {
-            //                                                     Title = p.TitleOfProduct,
-            //                                                     Quantity = p.Quantity,
-            //                                                     Price = p.Price
-            //                                                 }).ToList()
-            //                                             }).ToListAsync();
-
-            //return View(query);
 
             IEnumerable<InvoiceViewModel> query = await (from invoice in _db.Invoices
                                             join product in _db.Products
@@ -79,12 +63,11 @@ namespace Task_Client.Controllers
                     TitleOfInvoice=addInvoice.TitleOfInvoice,
                 };
 
-                await _db.Invoices.AddAsync(newInvoice) ;
-                await _db.SaveChangesAsync();
+                await _Invoicecontext.Add(newInvoice);
 
                 foreach(var product in addInvoice.Products) 
                 {
-                    var prod = new Product()
+                    var newProduct = new Product()
                     {
                         InvoiceId = newInvoice.Id,
                         TitleOfProduct = product.TitleOfProduct,
@@ -92,8 +75,7 @@ namespace Task_Client.Controllers
                         Quentity= product.Quentity,
                         ImageUrl= product.ImageUrl,
                     };
-                    await _db.Products.AddAsync(prod);
-                    await _db.SaveChangesAsync();
+                    await _Productcontext.Add(newProduct);
                 }
                 return RedirectToAction(nameof(Index));
             }

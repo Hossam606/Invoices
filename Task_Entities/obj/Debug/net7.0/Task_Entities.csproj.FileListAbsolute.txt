@@ -10,3 +10,15 @@ E:\Visual Studio 22\Task_Client\Task_Entities\obj\Debug\net7.0\Task_Entities.dll
 E:\Visual Studio 22\Task_Client\Task_Entities\obj\Debug\net7.0\refint\Task_Entities.dll
 E:\Visual Studio 22\Task_Client\Task_Entities\obj\Debug\net7.0\Task_Entities.pdb
 E:\Visual Studio 22\Task_Client\Task_Entities\obj\Debug\net7.0\ref\Task_Entities.dll
+E:\Visual Studio 22\Invoices\Task_Entities\bin\Debug\net7.0\Task_Entities.deps.json
+E:\Visual Studio 22\Invoices\Task_Entities\bin\Debug\net7.0\Task_Entities.dll
+E:\Visual Studio 22\Invoices\Task_Entities\bin\Debug\net7.0\Task_Entities.pdb
+E:\Visual Studio 22\Invoices\Task_Entities\obj\Debug\net7.0\Task_Entities.csproj.AssemblyReference.cache
+E:\Visual Studio 22\Invoices\Task_Entities\obj\Debug\net7.0\Task_Entities.GeneratedMSBuildEditorConfig.editorconfig
+E:\Visual Studio 22\Invoices\Task_Entities\obj\Debug\net7.0\Task_Entities.AssemblyInfoInputs.cache
+E:\Visual Studio 22\Invoices\Task_Entities\obj\Debug\net7.0\Task_Entities.AssemblyInfo.cs
+E:\Visual Studio 22\Invoices\Task_Entities\obj\Debug\net7.0\Task_Entities.csproj.CoreCompileInputs.cache
+E:\Visual Studio 22\Invoices\Task_Entities\obj\Debug\net7.0\Task_Entities.dll
+E:\Visual Studio 22\Invoices\Task_Entities\obj\Debug\net7.0\refint\Task_Entities.dll
+E:\Visual Studio 22\Invoices\Task_Entities\obj\Debug\net7.0\Task_Entities.pdb
+E:\Visual Studio 22\Invoices\Task_Entities\obj\Debug\net7.0\ref\Task_Entities.dll

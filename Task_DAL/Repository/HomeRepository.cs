@@ -49,6 +49,7 @@ namespace Task_DAL.Repository
             return (IEnumerable<T>)users;
 
         }
+         
         public async Task<T> GetById(int id)
         {
             var result = await _db.Set<T>().FindAsync(id);
@@ -87,5 +88,7 @@ namespace Task_DAL.Repository
             }
             return false;
          }
+
+        
     }
 }
