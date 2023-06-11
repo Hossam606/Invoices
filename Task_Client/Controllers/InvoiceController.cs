@@ -39,19 +39,29 @@ namespace Task_Client.Controllers
 
             //return View(query);
 
-            //List<InvoiceViewModel> query = (from invoice in _db.Invoices
-            //                         join product in _db.Products
-            //                         on invoice.Id equals product.InvoiceId
-            //                         select new InvoiceViewModel { 
-            //                         Title= invoice.TitleOfInvoice,
-            //                         Date = invoice.Date.HasValue ? invoice.Date.Value : DateTime.MinValue,
-                                         
-            //                         }).ToList();
-            
-            //return View(query);
+            IEnumerable<InvoiceViewModel> query = await (from invoice in _db.Invoices
+                                            join product in _db.Products
+                                            on invoice.Id equals product.InvoiceId
+                                            select new InvoiceViewModel
+                                            {
+                                                TitleOfInvoice = invoice.TitleOfInvoice,
+                                                Date = invoice.Date.HasValue ? invoice.Date.Value : DateTime.MinValue,
+                                                Products = new List<Product>
+                                                {
+                                                    new Product
+                                                    {
+                                                        TitleOfProduct = product.TitleOfProduct,
+                                                        Quentity = product.Quentity,
+                                                        Price = product.Price,
+                                                    }
+                                                }
+
+                                            }).ToListAsync();
+
+            return View(query);
 
 
-            return View();
+            //return View();
         }
         [HttpGet]
         public IActionResult Create()
@@ -66,7 +76,7 @@ namespace Task_Client.Controllers
                 var newInvoice = new Invoice()
                 {
                     Date= DateTime.Now,
-                    TitleOfInvoice=addInvoice.Title.ToString(),
+                    TitleOfInvoice=addInvoice.TitleOfInvoice,
                 };
 
                 await _db.Invoices.AddAsync(newInvoice) ;

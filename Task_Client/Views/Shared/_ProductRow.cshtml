@@ -1,0 +1,27 @@
+﻿@model Task_Entities.Entities.Product
+ 
+<tr style="margin-bottom:20px">
+    <td style="padding: 10px">
+        <div class="form-group">
+            <label asp-for="TitleOfProduct" class="control-label"></label>
+            <input asp-for="TitleOfProduct" class="form-control" />
+            <span asp-validation-for="TitleOfProduct" class="text-danger"></span>
+        </div>
+         
+    </td>
+    <td style="padding: 10px">
+        <div class="form-group">
+            <label asp-for="Quentity" class="control-label"></label>
+            <input asp-for="Quentity" class="form-control" />
+            <span asp-validation-for="Quentity" class="text-danger"></span>
+        </div>
+        
+    </td>
+    <td style="padding: 10px">
+        <div class="form-group">
+            <label asp-for="Price" class="control-label"></label>
+            <input asp-for="Price" class="form-control" />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+    </td>
+ </tr>
