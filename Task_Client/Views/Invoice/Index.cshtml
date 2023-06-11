@@ -19,17 +19,15 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model.Products)
+                @*@foreach (var item in Model.Products)
                 {
                     <tr>
                         <td class="align-middle">
                             @Html.DisplayFor(Model=>Model.Date)
-                        </td>
-                         
+                        </td> 
                         <td class="align-middle">
                             @Html.DisplayFor(modelItem=>Model.Title)
                         </td>
-                    
                         <td class="align-middle">
                             @Html.DisplayFor(modelItem=>item.TitleOfProduct)
                         </td>
@@ -44,7 +42,7 @@
                             <a class="btn btn-danger text-white" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i>Delete</a>
                         </td>
                     </tr>
-                }
+                }*@
             </tbody>
         </table>
     </div>
@@ -52,7 +50,7 @@
 
 @*popup--------------------------------------------------*@
 
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Small Modal</button>
+
 <form asp-action="Create" method="post">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <div class="modal fade" id="myModal" role="dialog">
@@ -65,10 +63,16 @@
                 <div class="modal-body">
                     <tr>
                         <td>
-                            <div class="form-group">
+                            @*<div class="form-group">
                                 <label asp-for="Title" class="control-label"></label>
                                 <input asp-for="Title" class="form-control" />
                                 <span asp-validation-for="Title" class="text-danger"></span>
+                            </div>*@
+                            <div>
+                                <label for="title">Title Of Invoice</label>
+
+                                @Html.TextBoxFor(model => model.Products, new { @class = "form-control", placeholder = "Title" })
+                                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
                             </div>
                         </td>
                     </tr>
@@ -108,6 +112,7 @@
         </div>
     </div>
 </form>
+<button style="position:fixed; right: 25px; bottom:65px;" type="button" class="btn btn-info btn-lg text-white" data-toggle="modal" data-target="#myModal">Add Invoice</button>
 <script>
     $(document).ready(function () {
         $('#add-row-btn').click(function () {
