@@ -1,10 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Task_DAL.Data;
 using Task_Entities.Entities;
 using Task_Entities.InterFaces;
@@ -77,6 +71,21 @@ namespace Task_DAL.Repository
             //return entity;
         }
 
+        public  bool CheckUserInSignup(User user)
+        {
+            var usercheck = _db.Users.Any(m => m.UserName == user.UserName);
+            return usercheck;
+        }
 
+        public bool CheckUserInLogin(User user)
+        {
+            
+            var checkLogin = _db.Users.Where(x => x.Email.Equals(user.Email) && x.Password.Equals(user.Password)).FirstOrDefault();
+            if(checkLogin != null)
+            {
+                return true;
+            }
+            return false;
+         }
     }
 }

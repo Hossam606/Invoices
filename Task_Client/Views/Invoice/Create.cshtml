@@ -1,0 +1,136 @@
+﻿<!-- In the view for the invoice -->
+@model Task_Client.ViewModel.InvoiceViewModel
+
+
+@{
+    ViewData["Title"] = "Add Invoices";
+}
+
+<div class="row text">
+    <div class="col-md-8 offset-2">
+        <p>
+            <h1> Add A New Invoice </h1>
+        </p>
+
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <table class="table" id="table">
+                    <thead>
+
+                    </thead>
+                </table>
+                <!-- Modal -->
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                  <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Add Products To Invoices</h4>
+                            </div>
+                            
+                            <div class="modal-body">       
+                                <tr>
+                                    <td>
+                                        <div class="form-group">
+                                         <label asp-for="Products" class="control-label"></label>
+                                         <input asp-for="Products" class="form-control" />
+                                         <span asp-validation-for="Products" class="text-danger"></span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                         <label asp-for="Title" class="control-label"></label>
+                                         <input type ="number" asp-for="Title" class="form-control" />
+                                         <span asp-validation-for="Title" class="text-danger"></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <button id="add-row-btn">Add Row</button>
+                          
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <input type="submit" value="Create" class="btn btn-outline-success float-right" />
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </form>
+                @*<form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group text-center">
+                        <img class="rounded-circle border-info" style="max-width:150px; max-height:250px" id="ProfilPicturePreview" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Title" class="control-label"></label>
+                        <input asp-for="Title" class="form-control" />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Price" class="control-label"></label>
+                        <input asp-for="Price" class="form-control" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ImageUrl" class="control-label"></label>
+                        <input asp-for="ImageUrl" class="form-control" />
+                        <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="padding-top:10px;">
+                        <input type="submit" value="Create" class="btn btn-outline-success float-right" />
+                        <a class="btn btn-outline-secondary" asp-action="Index">Show All</a>
+                    </div>
+                </form>*@
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+
+        console.log("dddd");
+
+        $(document).ready(function () {
+            var output = document.getElementById('ProfilPicturePreview');
+            output.src = $("#ImageUrl").val();
+        })
+
+
+        $("#ImageUrl").on("change", function () {
+            var output = document.getElementById('ProfilPicturePreview');
+            output.src = $(this).val();
+        })
+
+    </script>
+    }
+
+@*<table id="invoice-grid">
+    @foreach(var prod in Model.Products)
+    {
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(Model=>prod.Title)</th>
+                <th>@Html.DisplayNameFor(Model=>prod.Price)</th>
+                <th>@Html.DisplayNameFor(Model=>prod.Quentity)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" name="product" /></td>
+                <td><input type="number" name="quantity" /></td>
+                <td><input type="number" name="price" /></td>
+            </tr>
+        </tbody>
+    }
+    
+</table>
+
+<button id="add-row-btn">Add Row</button>
+<button id="save-invoice-btn">Save Invoice</button>
+*@
+ @*@model Task_Entities.Entities.Product*@

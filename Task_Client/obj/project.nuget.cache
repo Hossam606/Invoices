@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cT19fEBgcSDZNtay0cPUmNQtVFE/1lGdRBdxfs2JZA2Tyf/4bInCfTKdBG44sEUGfeKfJ5AxYTNGgqs4iS8ujQ==",
+  "dgSpecHash": "sMzxnMviy2SKBM+bq/y3V/aBE1r2uWnA345ZppYj0Q2GsOpVqpotxcDXlWNHCORGKLeXx3pphRyz+I6XMnwvqw==",
   "success": true,
-  "projectFilePath": "E:\\Visual Studio 22\\Task_Client\\Task_Client\\Task_Client.csproj",
+  "projectFilePath": "E:\\Visual Studio 22\\Invoices\\Task_Client\\Task_Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\laptop\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\laptop\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

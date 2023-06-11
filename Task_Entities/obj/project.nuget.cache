@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0j4p0D0WlqEBy3EvKTSIJXMD+l1C763ON40Bzv5U6oW+ZBcLnpD8obC93/aZNbtiq1QdiPnJnlfNjYJIXlcm1g==",
+  "dgSpecHash": "n7riebS7zBVJToBkwrFRU04k3X3yLEyPsQ74CzHuPRYfCj73B8UBjQrx8+UsWcOSh3TODn5i9HH6UIF9xhIzWQ==",
   "success": true,
-  "projectFilePath": "E:\\Visual Studio 22\\Task_Client\\Task_Entities\\Task_Entities.csproj",
+  "projectFilePath": "E:\\Visual Studio 22\\Invoices\\Task_Entities\\Task_Entities.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

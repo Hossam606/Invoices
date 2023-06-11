@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Visual Studio 22\\Task_Client\\Task_Entities\\Task_Entities.csproj": {}
+    "E:\\Visual Studio 22\\Invoices\\Task_Entities\\Task_Entities.csproj": {}
   },
   "projects": {
-    "E:\\Visual Studio 22\\Task_Client\\Task_Entities\\Task_Entities.csproj": {
+    "E:\\Visual Studio 22\\Invoices\\Task_Entities\\Task_Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Visual Studio 22\\Task_Client\\Task_Entities\\Task_Entities.csproj",
+        "projectUniqueName": "E:\\Visual Studio 22\\Invoices\\Task_Entities\\Task_Entities.csproj",
         "projectName": "Task_Entities",
-        "projectPath": "E:\\Visual Studio 22\\Task_Client\\Task_Entities\\Task_Entities.csproj",
+        "projectPath": "E:\\Visual Studio 22\\Invoices\\Task_Entities\\Task_Entities.csproj",
         "packagesPath": "C:\\Users\\laptop\\.nuget\\packages\\",
-        "outputPath": "E:\\Visual Studio 22\\Task_Client\\Task_Entities\\obj\\",
+        "outputPath": "E:\\Visual Studio 22\\Invoices\\Task_Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\laptop\\AppData\\Roaming\\NuGet\\NuGet.Config",

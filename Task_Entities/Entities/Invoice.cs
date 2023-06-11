@@ -14,8 +14,8 @@ public partial class Invoice
     [Column(TypeName = "datetime")]
     public DateTime? Date { get; set; }
 
-    [Column(TypeName = "decimal(18, 0)")]
-    public decimal? Total { get; set; }
+    [StringLength(50)]
+    public string? TitleOfInvoice { get; set; }
 
     [InverseProperty("Invoice")]
     public virtual ICollection<Product> Products { get; set; } = new List<Product>();

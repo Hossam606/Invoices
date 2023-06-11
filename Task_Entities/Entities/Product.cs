@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
  
 
@@ -13,7 +11,7 @@ public partial class Product
     public int Id { get; set; }
 
     [StringLength(50)]
-    public string? Title { get; set; }
+    public string? TitleOfProduct { get; set; }
 
     [Column(TypeName = "decimal(18, 0)")]
     public decimal? Price { get; set; }
@@ -22,6 +20,8 @@ public partial class Product
 
     [StringLength(200)]
     public string? ImageUrl { get; set; }
+
+    public int? Quentity { get; set; }
 
     [ForeignKey("InvoiceId")]
     [InverseProperty("Products")]

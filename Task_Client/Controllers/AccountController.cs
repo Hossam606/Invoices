@@ -3,14 +3,17 @@ using Microsoft.AspNetCore.Mvc;
 using Task_Client.ViewModel;
 using Task_DAL.Data;
 using Task_Entities.Entities;
+using Task_Entities.InterFaces;
 
 namespace Task_Client.Controllers
 {
     public class AccountController : Controller
     {
         private readonly DbTaskContext _dbContext;
-        public AccountController(DbTaskContext dbContext)
+        private readonly IHomeRepository<User> _context;
+        public AccountController(IHomeRepository<User> context, DbTaskContext dbContext)
         {
+            _context = context;
             _dbContext = dbContext;
         }
 
@@ -24,15 +27,15 @@ namespace Task_Client.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (_dbContext.Users.Any(m => m.UserName == user.UserName))
+
+                if ( _context.CheckUserInSignup(user))
                 {
                     ViewBag.Notification = "This Account Has Already existed";
                     return View();
                 }
                 else
                 {
-                    await _dbContext.Users.AddAsync(user);
-                    await _dbContext.SaveChangesAsync();
+                    await _context.Add(user);
                     ViewData["id"] = user.Id.ToString();
                     ViewData["user"] = user.Email.ToString();
                     return RedirectToAction("Index", "Home");
@@ -61,7 +64,9 @@ namespace Task_Client.Controllers
             if (ModelState.IsValid)
             {
                 var checkLogin=_dbContext.Users.Where(x=>x.Email.Equals(userModel.Email)&& x.Password.Equals(userModel.Password)).FirstOrDefault();
+
                 //var result = await _signInManager.PasswordSignInAsync(userModel.Email, userModel.Password, userModel.RememberMe, false);
+                 
                 if (checkLogin !=null)
                 {
                     ViewData["Email"] = userModel.Email.ToString();

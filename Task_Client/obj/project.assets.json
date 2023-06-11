@@ -3535,11 +3535,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Visual Studio 22\\Task_Client\\Task_Client\\Task_Client.csproj",
+      "projectUniqueName": "E:\\Visual Studio 22\\Invoices\\Task_Client\\Task_Client.csproj",
       "projectName": "Task_Client",
-      "projectPath": "E:\\Visual Studio 22\\Task_Client\\Task_Client\\Task_Client.csproj",
+      "projectPath": "E:\\Visual Studio 22\\Invoices\\Task_Client\\Task_Client.csproj",
       "packagesPath": "C:\\Users\\laptop\\.nuget\\packages\\",
-      "outputPath": "E:\\Visual Studio 22\\Task_Client\\Task_Client\\obj\\",
+      "outputPath": "E:\\Visual Studio 22\\Invoices\\Task_Client\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\laptop\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3556,8 +3556,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "E:\\Visual Studio 22\\Task_Client\\Task_DAL\\Task_DAL.csproj": {
-              "projectPath": "E:\\Visual Studio 22\\Task_Client\\Task_DAL\\Task_DAL.csproj"
+            "E:\\Visual Studio 22\\Invoices\\Task_DAL\\Task_DAL.csproj": {
+              "projectPath": "E:\\Visual Studio 22\\Invoices\\Task_DAL\\Task_DAL.csproj"
             }
           }
         }

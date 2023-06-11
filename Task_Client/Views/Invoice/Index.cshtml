@@ -1,0 +1,154 @@
+﻿@model  Task_Client.ViewModel.InvoiceViewModel
+
+@{
+    ViewData["Title"] = "Page Product";
+}
+
+<div class="row">
+
+    <div class="col-md-8 offset-md-2">
+        <table class="table" id="table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>TitleOfInvoice</th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                     
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Products)
+                {
+                    <tr>
+                        <td class="align-middle">
+                            @Html.DisplayFor(Model=>Model.Date)
+                        </td>
+                         
+                        <td class="align-middle">
+                            @Html.DisplayFor(modelItem=>Model.Title)
+                        </td>
+                    
+                        <td class="align-middle">
+                            @Html.DisplayFor(modelItem=>item.TitleOfProduct)
+                        </td>
+                        <td class="align-middle">
+                            @Html.DisplayFor(modelItem=>item.Quentity)
+                        </td>
+                        <td class="align-middle">
+                            @Html.DisplayFor(modelItem=>item.Price)
+                        </td>
+                        <td class="align-middle">
+                            <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i>Edit</a>
+                            <a class="btn btn-danger text-white" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i>Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@*popup--------------------------------------------------*@
+
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Small Modal</button>
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add Products To Invoices</h4>
+                </div>
+                <div class="modal-body">
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="Title" class="control-label"></label>
+                                <input asp-for="Title" class="form-control" />
+                                <span asp-validation-for="Title" class="text-danger"></span>
+                            </div>
+                        </td>
+                    </tr>
+                     
+                    <div id="table-wrapper">
+                        <table id="product-table" style="margin-bottom:20px">
+                            <tr style="margin-bottom:20px">
+                                <td>
+                                    <div>
+                                        <label for="title">Title:</label>
+                                         
+                                        @Html.TextBoxFor(model => model.Products, new { @class = "form-control", placeholder = "Title" })
+                                            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div>
+                                        <label for="date">Date:</label>
+                                        @*@Html.TextBoxFor(model => model.Date)*@
+                                        @Html.TextBoxFor(model => model.Date, new { @class = "form-control", placeholder = "Date" })
+                                    </div>       
+                                </td>
+                                <hr />
+                            </tr>
+                        </table>
+                        <hr />
+                        <div>
+                            <button id="add-row-btn" type="button" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Add Row</button>
+                            <button id="remove-row-btn" type="button" class="btn btn-primary"><i class="fa fa-plus-circle">Remove Row</button>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <input type="submit" value="Create" class="btn btn-outline-success float-right" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<script>
+    $(document).ready(function () {
+        $('#add-row-btn').click(function () {
+            var firstRow = $('#product-table tr:first');
+            var newRow = firstRow.clone();
+            newRow.find('input').val('');
+            $('#product-table').append(newRow);
+        });
+
+        $('#remove-row-btn').click(function () {
+            var rows = $('#product-table tr');
+            if (rows.length > 1) {
+                rows.last().remove();
+            }
+        });
+        
+    });
+</script>
+
+
+@*<script>
+    $(document).ready(function () {
+        $('#add-row-btn').click(function () {
+            var firstRow = $('#product-table tr:first');
+            var newRow = firstRow.clone();
+            newRow.find('input').val('');
+            $('#product-table').append(newRow);
+            
+            var tables = $('#table-wrapper table');
+            if (tables.length > 1) {
+                tables.not(':last').after('<hr>');
+            }
+        });
+
+        $('#remove-row-btn').click(function () {
+            var rows = $('#product-table tr');
+            if (rows.length > 1) {
+                rows.last().remove();
+                $('#table-wrapper table:last').next('hr').remove();
+            }
+        });
+    });
+</script>*@
+ 
