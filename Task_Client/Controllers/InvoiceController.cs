@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using System.IO;
 using Task_Client.ViewModel;
 using Task_DAL.Data;
@@ -65,19 +66,39 @@ namespace Task_Client.Controllers
 
                 await _Invoicecontext.Add(newInvoice);
 
-                foreach(var product in addInvoice.Products) 
+                if(addInvoice.Products != null)
                 {
-                    var newProduct = new Product()
+                    foreach (var product in addInvoice.Products)
+                    {
+                        var newProduct = new Product()
+                        {
+                            InvoiceId = newInvoice.Id,
+                            TitleOfProduct = product.TitleOfProduct,
+                            Price = product.Price,
+                            Quentity = product.Quentity,
+                            ImageUrl = product.ImageUrl,
+                        };
+                        await _Productcontext.Add(newProduct);
+                    }
+                    return RedirectToAction(nameof(Index));
+                }
+                else if(addInvoice.Product != null)
+                {
+                    var pro = new Product()
                     {
                         InvoiceId = newInvoice.Id,
-                        TitleOfProduct = product.TitleOfProduct,
-                        Price= product.Price,
-                        Quentity= product.Quentity,
-                        ImageUrl= product.ImageUrl,
+                        TitleOfProduct = addInvoice.Product.TitleOfProduct,
+                        Price = addInvoice.Product.Price,
+                        Quentity = addInvoice.Product.Quentity,
+                        
                     };
-                    await _Productcontext.Add(newProduct);
+                    await _Productcontext.Add(pro);
+                    return RedirectToAction(nameof(Index));
+                    //return View("Index", "Invoice");
                 }
-                return RedirectToAction(nameof(Index));
+
+
+                
             }
 
             return View(addInvoice);

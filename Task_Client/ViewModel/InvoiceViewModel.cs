@@ -7,6 +7,7 @@ namespace Task_Client.ViewModel
     {
         public string TitleOfInvoice { get; set; }
         public DateTime Date { get; set; }
-        public List<Product> Products { get; set; }
+        public Product? Product { get; set; }
+        public List<Product>? Products { get; set; }
     }
 }

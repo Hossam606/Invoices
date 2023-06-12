@@ -34,3 +34,15 @@ C:\Users\laptop\OneDrive\Desktop\Invoices-main - Copy\Task_Entities\obj\Debug\ne
 C:\Users\laptop\OneDrive\Desktop\Invoices-main - Copy\Task_Entities\obj\Debug\net7.0\refint\Task_Entities.dll
 C:\Users\laptop\OneDrive\Desktop\Invoices-main - Copy\Task_Entities\obj\Debug\net7.0\Task_Entities.pdb
 C:\Users\laptop\OneDrive\Desktop\Invoices-main - Copy\Task_Entities\obj\Debug\net7.0\ref\Task_Entities.dll
+E:\Git Upload\Invoices\Task_Entities\bin\Debug\net7.0\Task_Entities.deps.json
+E:\Git Upload\Invoices\Task_Entities\bin\Debug\net7.0\Task_Entities.dll
+E:\Git Upload\Invoices\Task_Entities\bin\Debug\net7.0\Task_Entities.pdb
+E:\Git Upload\Invoices\Task_Entities\obj\Debug\net7.0\Task_Entities.csproj.AssemblyReference.cache
+E:\Git Upload\Invoices\Task_Entities\obj\Debug\net7.0\Task_Entities.GeneratedMSBuildEditorConfig.editorconfig
+E:\Git Upload\Invoices\Task_Entities\obj\Debug\net7.0\Task_Entities.AssemblyInfoInputs.cache
+E:\Git Upload\Invoices\Task_Entities\obj\Debug\net7.0\Task_Entities.AssemblyInfo.cs
+E:\Git Upload\Invoices\Task_Entities\obj\Debug\net7.0\Task_Entities.csproj.CoreCompileInputs.cache
+E:\Git Upload\Invoices\Task_Entities\obj\Debug\net7.0\Task_Entities.dll
+E:\Git Upload\Invoices\Task_Entities\obj\Debug\net7.0\refint\Task_Entities.dll
+E:\Git Upload\Invoices\Task_Entities\obj\Debug\net7.0\Task_Entities.pdb
+E:\Git Upload\Invoices\Task_Entities\obj\Debug\net7.0\ref\Task_Entities.dll
