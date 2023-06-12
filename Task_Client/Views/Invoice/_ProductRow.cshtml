@@ -1,0 +1,33 @@
+﻿@model Task_Client.ViewModel.InvoiceViewModel
+
+    <div class="form-group">
+        <label asp-for="TitleOfInvoice" class="control-label"></label>
+        <input asp-for="TitleOfInvoice" class="form-control" />
+        <span asp-validation-for="TitleOfInvoice" class="text-danger"></span>
+    </div>
+ 
+    <tr>
+        <th>
+            <div class="form-group">
+                <label asp-for="@Model.Product.TitleOfProduct" class="control-label"></label>
+                <input asp-for="@Model.Product.TitleOfProduct" class="form-control" />
+                <span asp-validation-for="@Model.Product.TitleOfProduct" class="text-danger"></span>
+            </div>
+        </th>
+        <th>
+            <div class="form-group">
+                <label asp-for="@Model.Product.Quentity" class="control-label"></label>
+                <input asp-for="@Model.Product.Quentity" class="form-control" />
+                <span asp-validation-for="@Model.Product.Quentity" class="text-danger"></span>
+            </div>
+        </th>
+        <th>
+            <div class="form-group">
+                <label asp-for="@Model.Product.Price" class="control-label"></label>
+                <input asp-for="@Model.Product.Price" class="form-control" />
+                <span asp-validation-for="@Model.Product.Price" class="text-danger"></span>
+            </div>
+        </th>
+
+    </tr>
+

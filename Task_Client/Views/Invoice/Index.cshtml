@@ -5,6 +5,11 @@
 
     ViewData["Title"] = "Page Product";
 }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <div class="row">
 
@@ -33,6 +38,7 @@
 
                         @foreach (var product in invoice.Products)
                         {
+                            
                                <td class="align-middle">
                                    @Html.DisplayFor(modelItem=>product.TitleOfProduct)
                                </td>
@@ -69,6 +75,7 @@
                 <!-- Modal -->
                 <form asp-action="Create" method="post">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                     
                     <div class="modal fade" id="myModal" role="dialog">
                         <div class="modal-dialog modal-sm">
                             <div class="modal-dialog modal-sm" style="display: inline-grid; align-items: center; justify-content: center;">
