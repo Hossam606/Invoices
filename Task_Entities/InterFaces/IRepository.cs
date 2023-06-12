@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Task_Entities.Entities;
 
 namespace Task_Entities.InterFaces
 {

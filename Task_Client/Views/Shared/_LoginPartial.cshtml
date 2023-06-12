@@ -1,9 +1,11 @@
-﻿ 
+﻿@using Microsoft.AspNetCore.Mvc;
+@inject IHttpContextAccessor HttpContextAccessor;
+
 <ul class="navbar-nav"style="float:right !important" >
-@if ( User.Identity.IsAuthenticated)
-{
+    @if (HttpContextAccessor.HttpContext.Session.GetString("UserName") != null && !string.IsNullOrEmpty(HttpContextAccessor.HttpContext.Session.GetString("UserName").ToString()))
+    {
     <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action="" title="Manage">Hello @User.Identity.Name!</a>
+            <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action="" title="Manage">Hello  @HttpContextAccessor.HttpContext.Session.GetString("UserName")!</a>
     </li>
     <li class="nav-item">
             <form class="form-inline" method="post" asp-controller="Account" asp-action="LogOut">

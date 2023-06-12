@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Visual Studio 22\\Invoices\\Task_Entities\\Task_Entities.csproj",
+      "projectUniqueName": "C:\\Users\\laptop\\OneDrive\\Desktop\\Invoices-main - Copy\\Task_Entities\\Task_Entities.csproj",
       "projectName": "Task_Entities",
-      "projectPath": "E:\\Visual Studio 22\\Invoices\\Task_Entities\\Task_Entities.csproj",
+      "projectPath": "C:\\Users\\laptop\\OneDrive\\Desktop\\Invoices-main - Copy\\Task_Entities\\Task_Entities.csproj",
       "packagesPath": "C:\\Users\\laptop\\.nuget\\packages\\",
-      "outputPath": "E:\\Visual Studio 22\\Invoices\\Task_Entities\\obj\\",
+      "outputPath": "C:\\Users\\laptop\\OneDrive\\Desktop\\Invoices-main - Copy\\Task_Entities\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\laptop\\AppData\\Roaming\\NuGet\\NuGet.Config",

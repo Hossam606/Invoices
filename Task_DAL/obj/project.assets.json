@@ -3200,11 +3200,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Visual Studio 22\\Invoices\\Task_DAL\\Task_DAL.csproj",
+      "projectUniqueName": "C:\\Users\\laptop\\OneDrive\\Desktop\\Invoices-main - Copy\\Task_DAL\\Task_DAL.csproj",
       "projectName": "Task_DAL",
-      "projectPath": "E:\\Visual Studio 22\\Invoices\\Task_DAL\\Task_DAL.csproj",
+      "projectPath": "C:\\Users\\laptop\\OneDrive\\Desktop\\Invoices-main - Copy\\Task_DAL\\Task_DAL.csproj",
       "packagesPath": "C:\\Users\\laptop\\.nuget\\packages\\",
-      "outputPath": "E:\\Visual Studio 22\\Invoices\\Task_DAL\\obj\\",
+      "outputPath": "C:\\Users\\laptop\\OneDrive\\Desktop\\Invoices-main - Copy\\Task_DAL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\laptop\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3221,8 +3221,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "E:\\Visual Studio 22\\Invoices\\Task_Entities\\Task_Entities.csproj": {
-              "projectPath": "E:\\Visual Studio 22\\Invoices\\Task_Entities\\Task_Entities.csproj"
+            "C:\\Users\\laptop\\OneDrive\\Desktop\\Invoices-main - Copy\\Task_Entities\\Task_Entities.csproj": {
+              "projectPath": "C:\\Users\\laptop\\OneDrive\\Desktop\\Invoices-main - Copy\\Task_Entities\\Task_Entities.csproj"
             }
           }
         }

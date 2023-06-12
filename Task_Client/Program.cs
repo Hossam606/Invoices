@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Task_DAL.Data;
 using Task_DAL.Repository;
 using Task_Entities.InterFaces;
@@ -17,6 +18,9 @@ namespace Task_Client
             // Add services to the container.
             
             builder.Services.AddControllersWithViews();
+            builder.Services.AddSession();
+            builder.Services.AddMvc();
+            builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             var conn = builder.Configuration.GetConnectionString("DefaultConnection");
             builder.Services.AddDbContext<DbTaskContext>(options =>
@@ -42,7 +46,7 @@ namespace Task_Client
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseSession();
             app.UseAuthorization();
             app.UseAuthentication();
 

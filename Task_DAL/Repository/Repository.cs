@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Task_DAL.Data;
+using Task_Entities.Entities;
 using Task_Entities.InterFaces;
 
 namespace Task_DAL.Repository
@@ -21,7 +22,7 @@ namespace Task_DAL.Repository
             await _context.SaveChangesAsync();
 
         }
-        
+
 
         public async Task Delete(int id)
         {
@@ -36,12 +37,13 @@ namespace Task_DAL.Repository
             var result = _context.Set<T>().ToList();
             return result;
         }
-         
+
         public async Task<T> GetById(int id)
         {
             var result = await _context.Set<T>().FindAsync(id);
             return result;
         }
+      
 
         public async Task UpdateAsync(int id, T entity)
         {

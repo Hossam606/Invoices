@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZJ0hWLdZZGkk7dc23WyR7t1NptWUnU4j3oi+4V4hV3HaLVhm9qG4VrUa/H045p8iQp2UfAiXyTrYVgHtc58o3A==",
+  "dgSpecHash": "fNyR7HfnFj5dRQu9tQp/XJTHrBSP1L+NIzH5KZtnaUIzyfl2fTScUmlR5LT2KpS8skX7Nf5pNTNDCEOf+FN9gw==",
   "success": true,
-  "projectFilePath": "E:\\Visual Studio 22\\Invoices\\Task_DAL\\Task_DAL.csproj",
+  "projectFilePath": "C:\\Users\\laptop\\OneDrive\\Desktop\\Invoices-main - Copy\\Task_DAL\\Task_DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\laptop\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\laptop\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

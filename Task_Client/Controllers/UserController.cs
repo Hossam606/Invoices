@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using System.Reflection.Metadata;
 using Task_Client.Models;
 using Task_DAL.Data;
@@ -33,37 +34,37 @@ namespace Task_Client.Controllers
         {
             return View();
         }
+       
         [HttpPost]
-        public async Task<IActionResult> Create(User adduser)
+        public async Task<IActionResult> Create(UserDisplayModel adduser)
         {
-            if (ModelState.IsValid)
+            if ( ModelState.IsValid)
             {
-                //await _db.Users.AddAsync(adduser);
-                //_db.SaveChanges();
-                await _context.Add(adduser);
+                adduser.User.IsAdmin = _context.CheckIfAdminTo_SafeUserForFirstTime();
+                await _context.Add(adduser.User);
                 return RedirectToAction(nameof(Index));
-                 
             }   
-            return View(adduser); 
+            return PartialView("AddPartialView", adduser); 
         }
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
-            //var user = await _db.Users.FindAsync(id);
-            //if (user == null) return View("NotFound");
-            //return View(user);
-            var x =await _context.GetById(id);
-            return View(x);
+            UserDisplayModel userDisplayModel = new UserDisplayModel();
+            var user =await _context.GetById(id);
+            TempData["userID"] = user.Id;
+            TempData.Keep();
+            return new JsonResult(user);
         }
         [HttpPost]
-        public async Task<IActionResult> Edit(int id,User user)
+        public async Task<IActionResult> Edit(UserDisplayModel adduser)
         {
             if (ModelState.IsValid)
             {
-                await _context.UpdateAsync(id, user);
+                Int32 userId = (int)TempData["userID"];
+                await _context.UpdateAsync(userId, adduser.User);
                 return RedirectToAction(nameof(Index));
             }
-            return View(user);
+            return PartialView("AddPartialView", adduser);
         }
         [HttpGet]
         public async Task<IActionResult> Delete(int id)
