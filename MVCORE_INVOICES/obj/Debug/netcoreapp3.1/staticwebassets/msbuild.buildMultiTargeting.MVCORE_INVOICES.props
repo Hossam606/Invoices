@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\MVCORE_INVOICES.props" />
+</Project>
