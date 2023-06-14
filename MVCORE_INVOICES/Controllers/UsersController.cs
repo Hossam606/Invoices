@@ -19,15 +19,20 @@ namespace MVCORE_INVOICES.Controllers
         }
         public IActionResult Index(string sterm = "")
         {
-            var users =  _context.GetUsers(sterm);
-            UserViewModel userModel = new UserViewModel
+            if(sterm != null)
             {
-                Users = users,
+                var users = _context.GetUsers(sterm);
+                UserViewModel userModel = new UserViewModel
+                {
+                    Users = users,
 
-                STerm = sterm,
+                    STerm = sterm,
 
-            };
-            return View(userModel);
+                };
+                return View(userModel);
+            }
+            return View();
+            
         }
         [HttpGet]
         public IActionResult Create()
@@ -83,6 +88,7 @@ namespace MVCORE_INVOICES.Controllers
                 STerm = ""
             };
             return View(nameof(Index), userModel);
+            //return RedirectToAction(nameof(Index));
         }
 
     }

@@ -39,7 +39,8 @@
                                     @invoice.Products.Count()
                                 </td>
                                 <td class="align-middle">
-                                    @invoice.Products.Sum(c=>c.Price)
+                                    @invoice.Products.Sum(c=>c.Quentity*c.Price)$
+                                    
                                 </td>
 
                                 <td class="align-middle">

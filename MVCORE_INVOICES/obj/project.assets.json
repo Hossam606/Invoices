@@ -6232,11 +6232,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\laptop\\Downloads\\MVCORE_INVOICES\\MVCORE_INVOICES\\MVCORE_INVOICES.csproj",
+      "projectUniqueName": "E:\\Invoices-main\\MVCORE_INVOICES\\MVCORE_INVOICES.csproj",
       "projectName": "MVCORE_INVOICES",
-      "projectPath": "C:\\Users\\laptop\\Downloads\\MVCORE_INVOICES\\MVCORE_INVOICES\\MVCORE_INVOICES.csproj",
+      "projectPath": "E:\\Invoices-main\\MVCORE_INVOICES\\MVCORE_INVOICES.csproj",
       "packagesPath": "C:\\Users\\laptop\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\laptop\\Downloads\\MVCORE_INVOICES\\MVCORE_INVOICES\\obj\\",
+      "outputPath": "E:\\Invoices-main\\MVCORE_INVOICES\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\laptop\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6253,11 +6253,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\laptop\\Downloads\\MVCORE_INVOICES\\DAL\\DAL.csproj": {
-              "projectPath": "C:\\Users\\laptop\\Downloads\\MVCORE_INVOICES\\DAL\\DAL.csproj"
+            "E:\\Invoices-main\\DAL\\DAL.csproj": {
+              "projectPath": "E:\\Invoices-main\\DAL\\DAL.csproj"
             },
-            "C:\\Users\\laptop\\Downloads\\MVCORE_INVOICES\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\laptop\\Downloads\\MVCORE_INVOICES\\Infrastructure\\Infrastructure.csproj"
+            "E:\\Invoices-main\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "E:\\Invoices-main\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }

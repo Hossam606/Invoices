@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\laptop\\Downloads\\MVCORE_INVOICES\\Infrastructure\\Infrastructure.csproj": {}
+    "E:\\Invoices-main\\Infrastructure\\Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\laptop\\Downloads\\MVCORE_INVOICES\\DAL\\DAL.csproj": {
+    "E:\\Invoices-main\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\laptop\\Downloads\\MVCORE_INVOICES\\DAL\\DAL.csproj",
+        "projectUniqueName": "E:\\Invoices-main\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\laptop\\Downloads\\MVCORE_INVOICES\\DAL\\DAL.csproj",
+        "projectPath": "E:\\Invoices-main\\DAL\\DAL.csproj",
         "packagesPath": "C:\\Users\\laptop\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\laptop\\Downloads\\MVCORE_INVOICES\\DAL\\obj\\",
+        "outputPath": "E:\\Invoices-main\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\laptop\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -69,14 +69,14 @@
         }
       }
     },
-    "C:\\Users\\laptop\\Downloads\\MVCORE_INVOICES\\Infrastructure\\Infrastructure.csproj": {
+    "E:\\Invoices-main\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\laptop\\Downloads\\MVCORE_INVOICES\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "E:\\Invoices-main\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\laptop\\Downloads\\MVCORE_INVOICES\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "E:\\Invoices-main\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\laptop\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\laptop\\Downloads\\MVCORE_INVOICES\\Infrastructure\\obj\\",
+        "outputPath": "E:\\Invoices-main\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\laptop\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -93,8 +93,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\laptop\\Downloads\\MVCORE_INVOICES\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\laptop\\Downloads\\MVCORE_INVOICES\\DAL\\DAL.csproj"
+              "E:\\Invoices-main\\DAL\\DAL.csproj": {
+                "projectPath": "E:\\Invoices-main\\DAL\\DAL.csproj"
               }
             }
           }

@@ -13,6 +13,7 @@
                     <th>Name</th>
                     <th>Quantity</th>
                     <th> Price</th>
+                    <th> Total</th>
                 </tr>
             </thead>
             <tbody>
@@ -28,7 +29,12 @@
                                 @product.Quentity
                             </td>
                             <td class="align-middle">
-                                @product.Price
+                                 
+                                @product.Price$ 
+                            </td>
+                            <td class="align-middle">
+
+                                @(product.Price * product.Quentity)$
                             </td>
                         </tr>
                     }
