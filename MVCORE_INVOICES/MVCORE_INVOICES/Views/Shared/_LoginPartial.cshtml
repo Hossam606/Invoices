@@ -1,0 +1,28 @@
+﻿@using Microsoft.AspNetCore.Http;
+@using Microsoft.AspNetCore.Mvc;
+@inject IHttpContextAccessor HttpContextAccessor;
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+<ul class="navbar-nav" style="float:right !important">
+    @if (HttpContextAccessor.HttpContext.Session.GetString("UserName") != null && !string.IsNullOrEmpty(HttpContextAccessor.HttpContext.Session.GetString("UserName").ToString()))
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action="" title="Manage">@Localizer["Hello"].Value  @HttpContextAccessor.HttpContext.Session.GetString("UserName")!</a>
+        </li>
+        <li class="nav-item">
+            <form class="form-inline" method="post" asp-controller="Account" asp-action="LogOut">
+                <button type="submit" class="nav-link btn btn-link text-dark">@Localizer["LogOut"].Value </button>
+            </form>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="SignUp">@Localizer["Register"].Value</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">@Localizer["Login"].Value</a>
+        </li>
+    }
+</ul>

@@ -1,0 +1,179 @@
+﻿@model DAL.ViewModels.UserViewModel;
+@using Microsoft.AspNetCore.Http;
+@using Microsoft.AspNetCore.Mvc;
+@inject IHttpContextAccessor HttpContextAccessor;
+@using MVCORE_INVOICES.Helper;
+@using Microsoft.AspNetCore.Mvc.Localization;
+@inject IViewLocalizer Localizer
+@inject IHtmlLocalizer<CommonResources> SharedLocalizer
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+    #exampleModalCenter {
+        opacity: 23434343332;
+        z-index: 323232;
+    }
+</style>
+@Html.AntiForgeryToken()
+
+<div class="container" style="margin-top:3%">
+    <div class="row" style="margin-bottom:10px;margin-left: 70px;
+    margin-right: 8px; float: right;">
+        <div class="col-4" style="
+             margin-right: 22px;">
+            <form method="post" enctype="multipart/form-data" asp-controller="Users" asp-action="ExportToExcell">
+                <input class="btn btn-info" type="submit" id="ExportToExcellBtn" value="@Localizer["ExportToExcell"].Value" />
+            </form>
+        </div>
+        <div class="col-4">
+            <form method="post" asp-action="ExportToPdf" asp-controller="Users" enctype="multipart/form-data">
+                <input class="btn btn-info" type="Submit" value="@Localizer["ExportToPdf"].Value" />
+            </form>
+        </div>
+
+    </div>
+
+
+
+    <div class="row">
+        @if (HttpContextAccessor.HttpContext.Session.GetString("IsAdmin") != null && (HttpContextAccessor.HttpContext.Session.GetString("IsAdmin").ToString() == "True"))
+        {
+            <button type="button" class="btn btn-primary" data-toggle="modal" style="margin-left:8px; margin-right: 8px;" data-target="#exampleModalCenter">
+                @Localizer["AddNewUser"].Value
+            </button>
+        }
+
+
+        <form asp-action="Index" class="row row-cols-lg-auto g-3 align-items-center">
+            <div class="col-8">
+                <label class="visually-hidden" hidden for="sterm">@Localizer["UserNAme"].Value</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" value="@Model.STerm" id="sterm" name="sterm" placeholder="@Localizer["Search"].Value">
+                </div>
+            </div>
+
+            <div class="col-2">
+                <button type="submit" class="btn btn-primary">@Localizer["Search"].Value</button>
+
+            </div>
+
+        </form>
+        <div class="col-2">
+            <a href="Users/Index" class="btn btn-dark">@Localizer["Reset"].Value</a>
+        </div>
+    </div>
+    <br>
+    <table class="table table-striped" id="table">
+        <thead>
+            <tr>
+                <th>@Localizer["UserNAme"].Value</th>
+                <th>@Localizer["FullName"].Value</th>
+                <th>@Localizer["Email"].Value</th>
+                <th>@Localizer["Phone"].Value</th>
+                @if (HttpContextAccessor.HttpContext.Session.GetString("IsAdmin") != null && (HttpContextAccessor.HttpContext.Session.GetString("IsAdmin").ToString() == "True"))
+                {
+                    <th>@Localizer["Edit"].Value</th>
+                    <th>@Localizer["Delete"].Value</th>
+                }
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Users)
+            {
+                <tr>
+                    <td class="align-middle">
+                        @Html.DisplayFor(modelItem=>item.UserName)
+                    </td>
+                    <td class="align-middle">
+                        @Html.DisplayFor(modelItem=>item.FullName)
+                    </td>
+                    <td class="align-middle">
+                        @Html.DisplayFor(modelItem=>item.Email)
+                    </td>
+
+                    <td class="align-middle">
+                        @Html.DisplayFor(modelItem=>item.Phone)
+                    </td>
+                    @if (HttpContextAccessor.HttpContext.Session.GetString("IsAdmin") != null && (HttpContextAccessor.HttpContext.Session.GetString("IsAdmin").ToString() == "True"))
+                    {
+                        <td>
+                            <input type="hidden" class="id" id="id" value="@item.Id" />
+                            <a class="btn btn-primary edit"><i class="bi bi-pencil-square"></i>@Localizer["Edit"].Value</a>
+                        </td>
+                        <td>
+                            <input type="hidden" class="deleteId" id="deleteId" value="@item.Id" />
+
+@*                            <form method="post" asp-action="Delete" asp-controller="Users" enctype="multipart/form-data">
+*@                                <a class="btn btn-danger text-white Delete"  onclick="return confirm('Delete this User?')"><i class="bi bi-trash"></i>@Localizer["Delete"].Value</a>
+@*                            </form>
+*@
+                        </td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+        @Html.Partial("AddPartialView", Model)
+
+        @Html.Partial("UpdatePartialView", Model)
+
+    
+
+
+
+</div>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $('table .edit').on('click', function () {
+            debugger;
+            var id = $(this).parent().find('.id').val();
+            $.ajax({
+                type: 'GET',
+                url: '/Users/Edit/' + id,
+                success: function (user) {
+                    debugger;
+                    $('#UpdateUserModal input[name="id"]').val(user.id);
+                    $('#UpdateUserModal input[name="FullName"]').val(user.fullName);
+                    $('#UpdateUserModal input[name="UserName"]').val(user.userName);
+                    $('#UpdateUserModal input[name="Email"]').val(user.email);
+                    $('#UpdateUserModal input[name="Password"]').val(user.password);
+                    $('#UpdateUserModal input[name="Phone"]').val(user.phone);
+
+                    $('#UpdateUserModal').modal('show');
+                }
+            })
+        })
+
+        $('table .Delete').on('click', function () {
+            debugger;
+            var id = $(this).parent().find('.deleteId').val();
+            $.ajax({
+                type: 'POST',
+                url: '/Users/Delete/' + id,
+                success: function (user) {
+                  debugger;
+                    window.location.href = user.redirectToUrl;
+
+                }
+            })
+        })
+    });
+
+
+
+
+
+</script>

@@ -1,0 +1,31 @@
+﻿@model DAL.ViewModels.InvoiceViewModel
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+<tr>
+    <td class="col-md-2">
+        <label class="control-label">@Localizer["TitleOfProduct"].Value</label>
+        <input asp-for="@Model.Product.TitleOfProduct" id="txtTitleOfProduct" class="form-control" />
+        <span asp-validation-for="@Model.Product.TitleOfProduct" class="text-danger"></span>
+    </td>
+
+    <td>
+        <label  class="control-label">@Localizer["Quantity"].Value</label>
+        <input asp-for="@Model.Product.Quentity" id="txtQuentity" class="form-control" />
+        <span asp-validation-for="@Model.Product.Quentity" class="text-danger"></span>
+    </td>
+    <td>
+        <label class="control-label">@Localizer["Price"].Value</label>
+        <input asp-for="@Model.Product.Quentity" id="txtPrice" class="form-control" />
+        <span asp-validation-for="@Model.Product.Price" class="text-danger"></span>
+    </td>
+</tr>
+
+
+
+
+
+
+
+
+

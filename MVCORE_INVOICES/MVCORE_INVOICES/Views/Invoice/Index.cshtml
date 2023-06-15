@@ -1,0 +1,164 @@
+﻿@model IEnumerable<DAL.ViewModels.InvoiceViewModel>
+@using Microsoft.AspNetCore.Http;
+@using Microsoft.AspNetCore.Mvc;
+@inject IHttpContextAccessor HttpContextAccessor;
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = "Page Product";
+}
+
+<div class="container" style="margin-top:3%">
+    @if (HttpContextAccessor.HttpContext.Session.GetString("IsAdmin") != null && (HttpContextAccessor.HttpContext.Session.GetString("IsAdmin").ToString() == "True"))
+    {
+        <button type="button" style="margin-left:200px;" class="btn btn-primary" data-toggle="modal" data-target="#myModal">@Localizer["AddInvoice"].Value</button>
+    }
+    <br />
+    <div class="row">
+
+        <br />
+        <div class="col-md-8 offset-md-2">
+            <table class="table" id="table">
+                <thead>
+                    <tr>
+                        <th>@Localizer["Date"].Value</th>
+                        <th>@Localizer["NumberofProducts"].Value   </th>
+                        <th>@Localizer["TotalPrice"].Value  </th>
+                        <th>Products</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null)
+                    {
+                        @foreach (var invoice in Model)
+                        {
+                            <tr>
+
+                                <td class="align-middle">
+                                    @invoice.Date?.ToShortDateString()
+                                </td>
+                                <td class="align-middle">
+                                    @invoice.Products.Count()
+                                </td>
+                                <td class="align-middle">
+                                    @invoice.Products.Sum(c=>c.Price*c.Quentity)$
+                                </td>
+
+                                <td class="align-middle">
+                                    <a asp-action="Details" asp-route-id="@invoice.Id" class="btn btn-outline-primary ShowProducts"><i class="bi bi-pencil-square"></i>@Localizer["Show"].Value</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    @*popup--------------------------------------------------*@
+</div>
+<div class="row text">
+    <div class="col-md-8 offset-2">
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <!-- Modal -->
+                @*<form asp-action="Create" method="post">*@
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    @Html.AntiForgeryToken()
+
+                    <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-dialog modal-sm" style="display: inline-grid; align-items: center; justify-content: center;">
+                                <div class="modal-content" style="width: 600px">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Add Products To Invoices</h4>
+                                    </div>
+                                    <div id="table-wrapper">
+                                        <div class="form-group">
+                                        </div>
+                                        <table id="myTable" class=" table order-list">
+                                            <tbody id="tbbody">
+
+                                                @Html.Partial("_ProductRow", new DAL.ViewModels.InvoiceViewModel())
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <hr />
+                                    <div style="margin: 10px 20px;">
+                                        <button id="addrow" type="button" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Add Row</button>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <input type="submit" id="btnSubmit" value="Create" class="btn btn-outline-success float-right" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @*</form>*@
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+
+
+
+    <script>
+        $(document).ready(function () {
+            var counter = 0;
+            $("#addrow").on("click", function () {
+                var newRow = $("<tr>");
+                var cols = "";
+                cols += '<td><input id="txtTitleOfProduct" type="text" class="form-control" name="txtTitleOfProduct' + counter + '" /></td>'
+                cols += '<td><input id="txtQuentity" type="text" class="form-control" name="txtQuentity' + counter + '" /></td>';
+                cols += '<td><input id="txtPrice" type="text" class="form-control" name="txtPrice' + counter + '" /></td>';
+                cols += '<td><button type="button" class="ibtnDel btn btn-md btn-danger "><i class="fa fa-trash-o">Delete</i></button></td>';
+
+                newRow.append(cols);
+                $("table.order-list").append(newRow);
+                counter++;
+            });
+
+            $("table.order-list").on("click", ".ibtnDel", function (event) {
+                $(this).closest("tr").remove();
+                counter -= 1
+            });
+
+            $("#btnSubmit").on("click", function () {
+                //var invoiceViewModel = {};
+                debugger;
+
+                var MyProducts = new Array();
+                $("table.order-list TBODY TR").each(function () {
+                    debugger;
+                    var row = $(this);
+                    var productVM = {};
+                    productVM.TitleOfProduct = row.find("[id*=txtTitleOfProduct]").val();
+                    productVM.Quentity = parseInt(row.find("[id*=txtQuentity]").val());
+                    productVM.Price = parseInt(row.find("[id*=txtPrice]").val());
+                    MyProducts.push(productVM);
+                });
+                debugger;
+
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("Create", "Invoice")',
+                    dataType: 'json',
+                    contentType: 'application/json; charset=utf-8',
+                    data: JSON.stringify(MyProducts),
+                    success: function (result) {
+                        debugger;
+                      window.location.href = result.redirectToUrl;
+                    }
+                });
+
+            });
+
+        });
+
+    </script>
+}
+

@@ -1,0 +1,64 @@
+﻿@model DAL.ViewModels.UserViewModel;
+@using Microsoft.AspNetCore.Mvc.Localization;
+@inject IViewLocalizer Localizer
+@inject IHtmlLocalizer<CommonResources> SharedLocalizer
+
+<div class="modal " id="UpdateUserModal" tabindex="-1" AllowsTransparency="True" role="dialog" aria-labelledby="UpdateUserTitle" aria-hidden="true">
+    <div class="modal-dialog " role="document">
+
+        @using (Html.BeginForm("Edit", "Users", FormMethod.Post, new { id = "MyForm", enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">@Localizer["UpdateNewUser"].Value</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-8 offset-2">
+
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+
+                                <label class="control-label">@Localizer["FullName"].Value</label>
+                                <input asp-for="@Model.User.FullName" id="FullName" name="FullName" class="form-control" />
+                                <span asp-validation-for="@Model.User.FullName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">@Localizer["UserNAme"].Value</label>
+                                <input asp-for="@Model.User.UserName" id="UserName" name="UserName" class="form-control" />
+                                <span asp-validation-for="@Model.User.UserName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">@Localizer["Email"].Value</label>
+                                <input asp-for="@Model.User.Email" id="Email" name="Email" class="form-control" />
+                                <span asp-validation-for="@Model.User.Email" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">@Localizer["Password"].Value</label>
+                                <input asp-for="@Model.User.Password" id="Password" name="Password" class="form-control" />
+                                <span asp-validation-for="@Model.User.Password" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input asp-for="@Model.User.IsAdmin" hidden id="IsAdmin" name="IsAdmin" class="form-control" />
+                                <label class="control-label">@Localizer["Phone"].Value</label>
+                                <input asp-for="@Model.User.Phone" id="Phone" name="Phone" class="form-control" />
+                                <span asp-validation-for="@Model.User.Phone" class="text-danger"></span>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">@Localizer["Close"].Value</button>
+                    <input type="submit" id="Update" value="@Localizer["Edit"].Value" class="btn btn-success float-right" />
+                </div>
+            </div>
+        }
+    </div>
+
+</div>
