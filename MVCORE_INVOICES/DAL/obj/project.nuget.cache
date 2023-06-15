@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MMTQJFo09sQ3HiL7u8S445YBWiHzSS7NApiiMaW1o81/JndC/xlxqRdZ0Wvho33AQXOAb4RQp8G/BaU5rVdd1A==",
+  "dgSpecHash": "GKVPKg32yxBcLZzOMpvxdexX5lLcB6AJy2WwF4WdqxDPK933kV/gix8G8U6n2R+cYqhjKoKGdqDOihO3++LGLw==",
   "success": true,
-  "projectFilePath": "E:\\Visual Studio 22\\Invoices_Proj_DB\\MVCORE_INVOICES\\DAL\\DAL.csproj",
+  "projectFilePath": "C:\\Users\\laptop\\OneDrive\\Desktop\\Invoices-main\\Invoices-main\\MVCORE_INVOICES\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\laptop\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\laptop\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

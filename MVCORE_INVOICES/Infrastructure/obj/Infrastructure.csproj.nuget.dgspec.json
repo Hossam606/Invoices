@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Visual Studio 22\\Invoices_Proj_DB\\MVCORE_INVOICES\\Infrastructure\\Infrastructure.csproj": {}
+    "C:\\Users\\laptop\\OneDrive\\Desktop\\Invoices-main\\Invoices-main\\MVCORE_INVOICES\\Infrastructure\\Infrastructure.csproj": {}
   },
   "projects": {
-    "E:\\Visual Studio 22\\Invoices_Proj_DB\\MVCORE_INVOICES\\DAL\\DAL.csproj": {
+    "C:\\Users\\laptop\\OneDrive\\Desktop\\Invoices-main\\Invoices-main\\MVCORE_INVOICES\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Visual Studio 22\\Invoices_Proj_DB\\MVCORE_INVOICES\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Users\\laptop\\OneDrive\\Desktop\\Invoices-main\\Invoices-main\\MVCORE_INVOICES\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "E:\\Visual Studio 22\\Invoices_Proj_DB\\MVCORE_INVOICES\\DAL\\DAL.csproj",
+        "projectPath": "C:\\Users\\laptop\\OneDrive\\Desktop\\Invoices-main\\Invoices-main\\MVCORE_INVOICES\\DAL\\DAL.csproj",
         "packagesPath": "C:\\Users\\laptop\\.nuget\\packages\\",
-        "outputPath": "E:\\Visual Studio 22\\Invoices_Proj_DB\\MVCORE_INVOICES\\DAL\\obj\\",
+        "outputPath": "C:\\Users\\laptop\\OneDrive\\Desktop\\Invoices-main\\Invoices-main\\MVCORE_INVOICES\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\laptop\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -69,14 +69,14 @@
         }
       }
     },
-    "E:\\Visual Studio 22\\Invoices_Proj_DB\\MVCORE_INVOICES\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\laptop\\OneDrive\\Desktop\\Invoices-main\\Invoices-main\\MVCORE_INVOICES\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Visual Studio 22\\Invoices_Proj_DB\\MVCORE_INVOICES\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\laptop\\OneDrive\\Desktop\\Invoices-main\\Invoices-main\\MVCORE_INVOICES\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "E:\\Visual Studio 22\\Invoices_Proj_DB\\MVCORE_INVOICES\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "C:\\Users\\laptop\\OneDrive\\Desktop\\Invoices-main\\Invoices-main\\MVCORE_INVOICES\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\laptop\\.nuget\\packages\\",
-        "outputPath": "E:\\Visual Studio 22\\Invoices_Proj_DB\\MVCORE_INVOICES\\Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\laptop\\OneDrive\\Desktop\\Invoices-main\\Invoices-main\\MVCORE_INVOICES\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\laptop\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -93,8 +93,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "E:\\Visual Studio 22\\Invoices_Proj_DB\\MVCORE_INVOICES\\DAL\\DAL.csproj": {
-                "projectPath": "E:\\Visual Studio 22\\Invoices_Proj_DB\\MVCORE_INVOICES\\DAL\\DAL.csproj"
+              "C:\\Users\\laptop\\OneDrive\\Desktop\\Invoices-main\\Invoices-main\\MVCORE_INVOICES\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\laptop\\OneDrive\\Desktop\\Invoices-main\\Invoices-main\\MVCORE_INVOICES\\DAL\\DAL.csproj"
               }
             }
           }

@@ -50,7 +50,13 @@ namespace Infrastructure.Repository
             IEnumerable<User> users;
             try
             {
-                sTerm = sTerm.ToLower();
+                if (sTerm != null)
+                {
+                    sTerm = sTerm.ToLower();
+                }
+                    
+                
+                
 
                 var newusers = _context.Users.ToList();
                 // search by username 

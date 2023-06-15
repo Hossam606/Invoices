@@ -63,3 +63,16 @@ E:\Visual Studio 22\Invoices_Proj_DB\MVCORE_INVOICES\Infrastructure\obj\Debug\ne
 E:\Visual Studio 22\Invoices_Proj_DB\MVCORE_INVOICES\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.csproj.CopyComplete
 E:\Visual Studio 22\Invoices_Proj_DB\MVCORE_INVOICES\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.dll
 E:\Visual Studio 22\Invoices_Proj_DB\MVCORE_INVOICES\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.pdb
+C:\Users\laptop\OneDrive\Desktop\Invoices-main\Invoices-main\MVCORE_INVOICES\Infrastructure\bin\Debug\netcoreapp3.1\Infrastructure.deps.json
+C:\Users\laptop\OneDrive\Desktop\Invoices-main\Invoices-main\MVCORE_INVOICES\Infrastructure\bin\Debug\netcoreapp3.1\Infrastructure.dll
+C:\Users\laptop\OneDrive\Desktop\Invoices-main\Invoices-main\MVCORE_INVOICES\Infrastructure\bin\Debug\netcoreapp3.1\Infrastructure.pdb
+C:\Users\laptop\OneDrive\Desktop\Invoices-main\Invoices-main\MVCORE_INVOICES\Infrastructure\bin\Debug\netcoreapp3.1\DAL.dll
+C:\Users\laptop\OneDrive\Desktop\Invoices-main\Invoices-main\MVCORE_INVOICES\Infrastructure\bin\Debug\netcoreapp3.1\DAL.pdb
+C:\Users\laptop\OneDrive\Desktop\Invoices-main\Invoices-main\MVCORE_INVOICES\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.csproj.AssemblyReference.cache
+C:\Users\laptop\OneDrive\Desktop\Invoices-main\Invoices-main\MVCORE_INVOICES\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\laptop\OneDrive\Desktop\Invoices-main\Invoices-main\MVCORE_INVOICES\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.AssemblyInfoInputs.cache
+C:\Users\laptop\OneDrive\Desktop\Invoices-main\Invoices-main\MVCORE_INVOICES\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.AssemblyInfo.cs
+C:\Users\laptop\OneDrive\Desktop\Invoices-main\Invoices-main\MVCORE_INVOICES\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\laptop\OneDrive\Desktop\Invoices-main\Invoices-main\MVCORE_INVOICES\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.csproj.CopyComplete
+C:\Users\laptop\OneDrive\Desktop\Invoices-main\Invoices-main\MVCORE_INVOICES\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.dll
+C:\Users\laptop\OneDrive\Desktop\Invoices-main\Invoices-main\MVCORE_INVOICES\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.pdb

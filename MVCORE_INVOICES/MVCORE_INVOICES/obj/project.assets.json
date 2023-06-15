@@ -8052,11 +8052,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Visual Studio 22\\Invoices_Proj_DB\\MVCORE_INVOICES\\MVCORE_INVOICES\\MVCORE_INVOICES.csproj",
+      "projectUniqueName": "C:\\Users\\laptop\\OneDrive\\Desktop\\Invoices-main\\Invoices-main\\MVCORE_INVOICES\\MVCORE_INVOICES\\MVCORE_INVOICES.csproj",
       "projectName": "MVCORE_INVOICES",
-      "projectPath": "E:\\Visual Studio 22\\Invoices_Proj_DB\\MVCORE_INVOICES\\MVCORE_INVOICES\\MVCORE_INVOICES.csproj",
+      "projectPath": "C:\\Users\\laptop\\OneDrive\\Desktop\\Invoices-main\\Invoices-main\\MVCORE_INVOICES\\MVCORE_INVOICES\\MVCORE_INVOICES.csproj",
       "packagesPath": "C:\\Users\\laptop\\.nuget\\packages\\",
-      "outputPath": "E:\\Visual Studio 22\\Invoices_Proj_DB\\MVCORE_INVOICES\\MVCORE_INVOICES\\obj\\",
+      "outputPath": "C:\\Users\\laptop\\OneDrive\\Desktop\\Invoices-main\\Invoices-main\\MVCORE_INVOICES\\MVCORE_INVOICES\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\laptop\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8073,11 +8073,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "E:\\Visual Studio 22\\Invoices_Proj_DB\\MVCORE_INVOICES\\DAL\\DAL.csproj": {
-              "projectPath": "E:\\Visual Studio 22\\Invoices_Proj_DB\\MVCORE_INVOICES\\DAL\\DAL.csproj"
+            "C:\\Users\\laptop\\OneDrive\\Desktop\\Invoices-main\\Invoices-main\\MVCORE_INVOICES\\DAL\\DAL.csproj": {
+              "projectPath": "C:\\Users\\laptop\\OneDrive\\Desktop\\Invoices-main\\Invoices-main\\MVCORE_INVOICES\\DAL\\DAL.csproj"
             },
-            "E:\\Visual Studio 22\\Invoices_Proj_DB\\MVCORE_INVOICES\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "E:\\Visual Studio 22\\Invoices_Proj_DB\\MVCORE_INVOICES\\Infrastructure\\Infrastructure.csproj"
+            "C:\\Users\\laptop\\OneDrive\\Desktop\\Invoices-main\\Invoices-main\\MVCORE_INVOICES\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\laptop\\OneDrive\\Desktop\\Invoices-main\\Invoices-main\\MVCORE_INVOICES\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }
