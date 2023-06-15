@@ -26,7 +26,7 @@ namespace DAL.Context
         public virtual DbSet<User> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-            => optionsBuilder.UseSqlServer("Server=DESKTOP-SIIB9G2\\SQLEXPRESS;Database=DbTask;Trusted_Connection=True;encrypt=false");
+            => optionsBuilder.UseSqlServer("Server=DESKTOP-SIIB9G2\\SQLEXPRESS;Database=Invoices;Trusted_Connection=True;encrypt=false");
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
